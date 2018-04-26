@@ -101,7 +101,7 @@ console.log("var exponentNumbers = " + "[" + exponentNumbers+ "]");
 //varianta b
 var exponentNumbers2 = [];
 var n = 20;
-for (i=1; i<=n; i++)
+for (i=1; i<=n; ++i)
 {
   exponentNumbers2.push(i*i);
 }
