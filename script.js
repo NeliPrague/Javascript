@@ -49,7 +49,8 @@ var person = {
 //
 function createTableRow (person){
   var tableRow = '<tr><td>' + person.firstName + '</td><td>' + person.lastName + '</td><td>' + person.age + '</td><td>' + person.id + '</td></tr>';
-  return tableRow;
+  var tableRow2 = `<tr><td>${person.firstName}</td><td>${person.lastName}</td><td>${person.age}</td><td>${person.id}</td></tr>`;
+  return tableRow2;
 }
 
 // Příklad:
