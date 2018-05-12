@@ -12,14 +12,17 @@ function getFormData() {
 var First_Name = document.getElementById("ex1-input-1").value;
 var Last_Name = document.getElementById("ex1-input-2").value;
 var Age = document.getElementById("ex1-input-3").value;
+var personID = document.getElementById("ex1-input-4").value;
+
 var person = {
   firstName: First_Name,
   lastName: Last_Name,
-  age: Age
+  age: Age,
+  id: personID
   }
   return person;
 }
-console.log(getFormData());
+// console.log(getFormData());
 // Příklad:
 //
 // function getName(){
@@ -45,7 +48,7 @@ console.log(getFormData());
 // 3. Nastav aby funkce vracela tuto hodnotu jako výsledek.
 //
 function createTableRow (person){
-  var tableRow = '<tr><td>' + person.firstName + '</td><td>' + person.lastName + '</td><td>' + person.age + '</td></tr>';
+  var tableRow = '<tr><td>' + person.firstName + '</td><td>' + person.lastName + '</td><td>' + person.age + '</td><td>' + person.id + '</td></tr>';
   return tableRow;
 }
 
@@ -126,17 +129,3 @@ document.getElementById("ex1-addToTable").addEventListener("click", clickButtonA
 
 // Postup:
 // Použij postup popsaný tady https://www.w3schools.com/js/js_htmldom_eventlistener.asp , id tlačítka je "ex1-addToTable". tlačítku nastav, aby se volala funkce "clickButtonAddToTable".
-
-
-
-
-
-var test = [{
-            firstName: "John",
-            lastName: "Doe",
-            age: 24
-          },{
-            firstName: "Jimmy",
-            lastName: "Smith",
-            age: 18
-            }]
