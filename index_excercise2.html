@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="exercise-1">
+        <div class="row mb-3">
+            <div class="col-lg-12">
+                <h3>Exercise 1:</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <form>
+                    <div class="form-group">
+                        <label for="ex1-input-1">First Name</label>
+                        <input type="text" class="form-control" id="ex1-input-1" placeholder="Enter First Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="ex1-input-2">Last Name</label>
+                        <input type="text" class="form-control" id="ex1-input-2" placeholder="Enter Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="ex1-input-3">Age</label>
+                        <input type="number" class="form-control" id="ex1-input-3" placeholder="Enter Age">
+                    </div>
+                    <div class="form-group">
+                        <label for="ex1-input-4">ID</label>
+                        <input type="number" class="form-control" id="ex1-input-4" placeholder="Enter your ID">
+                    </div>
+                    <a class="btn btn-primary" id="ex1-addToTable">Add to table</a>
+                    <a class="btn btn-danger btn-primary" id="reset_form">Reset Form</a>
+                    <a class="btn btn-danger btn-primary" id="reset_table">Reset Table</a>
+                    <div class="form-group">
+                        <label for="ex1-input-5">Search / Filter</label>
+                        <input type="number" class="form-control" id="ex1-input-5" placeholder="Search / Filter">
+                    </div>
+                    <a class="btn btn-info btn-primary" id="search">Search</a>
+                    <a class="btn btn-warning btn-primary" id="filter">Filter</a>
+                    <a class="btn btn-success btn-primary" id="click">Copy to clickboard</a>
+                </form>
+            </div>
+
+
+            <div class="col-lg-6">
+            <table class="table table-striped" id="ex1-table">
+                <thead>
+                    <tr>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">ID</th>
+                    </tr>
+                </thead>
+                <tbody id="ex1-table-body">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="script_excercise2.js"></script>
+</body>
+</html>
