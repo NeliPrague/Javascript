@@ -47,12 +47,31 @@ var person = {
 // 2. Vytvoř si proměnnou, do které si vytvoříš html kód řádku tabulky a vlož tam to jméno, příjmení a věk.
 // 3. Nastav aby funkce vracela tuto hodnotu jako výsledek.
 //
-function createTableRow (person){
+function createTableRow (person, search){
+  var tableRow3 = '<tr>';
+  tableRow3 += createTableData(search, person.firstName);
+  tableRow3 += createTableData(search, person.lastName);
+  tableRow3 += createTableData(search, person.age);
+  tableRow3 += createTableData(search, person.id);
+  tableRow3 += '</tr>';
+
   var tableRow = '<tr><td>' + person.firstName + '</td><td>' + person.lastName + '</td><td>' + person.age + '</td><td>' + person.id + '</td></tr>';
-  var tableRow2 = `<tr><td>${person.firstName}</td><td>${person.lastName}</td><td>${person.age}</td><td>${person.id}</td></tr>`;
-  return tableRow2;
+  var tableRow2 = `<tr><td >${person.firstName}</td><td>${person.lastName}</td><td>${person.age}</td><td>${person.id}</td></tr>`;
+
+  return tableRow3;
 }
 
+
+function createTableData (search,item){
+  var tableData = '';
+    if (search == item && search != ""){
+      tableData = '<td class="yellow">' + item +'</td>';
+    } else {
+      tableData = '<td>' + item +'</td>';
+    }
+
+    return tableData;
+}
 // Příklad:
 // function createTR(notebook){
 //     var tableRow = '<tr><th>' + notebook.text + '</th></tr>';
@@ -77,12 +96,12 @@ var personList = [];
 // 6. Po skončení for cyklu je v proměnnhtmlTableé "htmlTable" vytvořená tabulka.
 // 7. Nastav, aby funkce createTable vracela tuto hodnotu.
 
-function createTable(personList)
+function createTable(personList, search)
 {
   var htmlTable = "";
   for (i=0; i < personList.length; i++)
   {
-    var htmlRow = createTableRow(personList[i]);
+    var htmlRow = createTableRow(personList[i], search);
     htmlTable += htmlRow;
   }
   return htmlTable;
@@ -113,7 +132,7 @@ function clickButtonAddToTable()
 {
   personList.push(getFormData());
 
-  document.getElementById("ex1-table-body").innerHTML = createTable(personList);
+  document.getElementById("ex1-table-body").innerHTML = createTable(personList, "");
 }
 
 // Postup:
@@ -145,13 +164,29 @@ function resetTable() {
   while (personList.length > 0){
     personList.pop();
   }
-  document.getElementById("ex1-table-body").innerHTML = createTable(personList);
+  document.getElementById("ex1-table-body").innerHTML = createTable(personList, "");
 }
 document.getElementById("reset_table").addEventListener("click", resetTable);
 
 // 3.Search table
 function search() {
-  var Search = document.getElementById("ex1-input-5").value;
-  
+  var search = document.getElementById("ex1-input-5").value;
+  document.getElementById("ex1-table-body").innerHTML = createTable(personList, search);
 }
-document.getElementById("search").addEventListener("click", resetForm);
+document.getElementById("search").addEventListener("click", search);
+
+//4. filter
+function filter() {
+  var filter = document.getElementById("ex1-input-5").value;
+  $("#ex1-table-body tr").addClass("invisible");
+  $("#ex1-table-body tr td:contains(" + filter + ")").parent().removeClass("invisible");
+}
+document.getElementById("filter").addEventListener("click", filter);
+
+//5. Copy
+function copyText(){
+  var copyText = document.getElementById("ex1-input-5");
+  copyText.select();
+  document.execCommand("copy");
+}
+document.getElementById("copy").addEventListener("click", copyText);
